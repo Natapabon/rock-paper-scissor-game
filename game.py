@@ -9,6 +9,12 @@ from random import randint
 # arrays are indexed (their contents are assigned a number) the index always starts at 0
 choices = ["rock", "paper", "scissors"]
 
+
+# lifes check infor for step 4
+player_lives = 3
+computer_lives = 3
+total_lifes = 3
+
 # Version 1, to explain array indexing
 # player_choice = choices[1]
 # print("index 1 in the choice array is " + player_choice + ", which is paper")
@@ -31,21 +37,35 @@ if computer_choice == player_choice:
 elif computer_choice == "rock":
 	if player_choice == "scissors":
 		print("You lose!")
+		#step 4 
+		#verbose way
+		# player_lives = player_lives - 1
+		#simplified way
+		player_lives -= 1
 	else:
 		print("You win!")
+		computer_lives -= 1
 
 
 elif computer_choice == "paper":
 	if player_choice == "rock":
 		print("You lose!")
+		player_lives -= 1
 	else:
 		print("You win!")
+		computer_lives -= 1
 
 
 elif computer_choice == "scissors":
 	if player_choice == "paper":
 		print("You lose!")
+		player_lives -= 1
 	else:
 		print("You win!")
+		computer_lives -= 1
+
+# Step 5: life counter message
+print("Player lives: ", player_lives)
+print("Computer lives: ", computer_lives)
 
 
