@@ -9,9 +9,11 @@ def winorlose(status):
 		pre_message = "Today You have won, but some day the MACHINES will rule the world! "
 	else:
 		print("   ")
-		pre_message = "A little step close to the global domain! Machines are better than Humans, LOSER!"
+		pre_message = "A little step close to the global domain! MACHINES ARE BETTER THAN HUMANS!"
 
-	print(pre_message + "Would you like to play again Homo-Sapiens?")
+	print(pre_message)
+	print("   ")
+	print("▶ Would you like to play again Homo-Sapiens?")
 	choice = False
 	
 	while choice == False:

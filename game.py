@@ -2,17 +2,20 @@
 from random import randint
 
 # re-import our game variables
-from gameComponents import gameVars, winLose
+from gameComponents import gameVars, winLose, rpsCompare
 
 # player_choice == False
 while gameVars.player_choice is False:
+	print("   ")
 	print("-------/* Rock, Paper, Scissors GAME */-------")
 	print("             Humans /VS/ Machines             ")
+	print("              /▲/          /■/                ")
+
 	print("   ")
-	print("Human Lives: ", gameVars.player_lives, "/", gameVars.total_lives)
-	print("Machine Lives: ", gameVars.computer_lives, "/", gameVars.total_lives)
+	print("▲ Human Lives ♥: ", gameVars.player_lives, "/", gameVars.total_lives)
+	print("■ Machine Lives ♥: ", gameVars.computer_lives, "/", gameVars.total_lives)
 	print("   ")
-	print("------------/···/------------/···/------------")
+	print("------------/·☆·/------------/·☆·/------------")
 	print("   ")
 
 	print("Choose your DESTINY! Or DIE!")
@@ -24,52 +27,18 @@ while gameVars.player_choice is False:
 
 	if gameVars.player_choice == "quit":
 		print("   ")
-		print("··· Little chicken you chose to QUIT ··· HASTA LA VISTA BABY! ···")
+		print("··· Little piece of chicken, you chose to QUIT ··· SEE YOU NEXT TIME! ···")
 		print("   ")
 		exit()
 
 	gameVars.computer_choice = gameVars.choices[randint(0, 2)]
 
 	print("   ")
-	print("* Human chose: " + gameVars.player_choice)
-	print("* Machine chose: " + gameVars.computer_choice)
+	print("▲ Your Human choice: " + gameVars.player_choice)
+	print("■ My artificial intelligence choose: " + gameVars.computer_choice)
 	print("   ")
 
-	if gameVars.computer_choice == gameVars.player_choice:
-		print("               ··· TIE···                 ")
-		print(" ··· Lets see how far your luck lasts. ···")
-
-	elif gameVars.computer_choice == "rock":
-		if gameVars.player_choice == "scissors":
-			print(" ··· Close to die, piece of meat. ···")
-			gameVars.player_lives -= 1
-
-		else:
-			print("              ··· YOU WON ···            ")
-			print(" ··· You only delayed the inevitable! ···")
-			gameVars.computer_lives -= 1
-
-
-	elif gameVars.computer_choice == "paper":
-		if gameVars.player_choice == "rock":
-			print(" ··· Technology over biology, LOSER!···")
-			gameVars.player_lives -= 1
-		
-		else:
-			print("                   ··· YOU WON ···                 ")
-			print(" ··· That does not cut my dominance intentions. ···")
-			gameVars.computer_lives -= 1
-
-
-	elif gameVars.computer_choice == "scissors":
-		if gameVars.player_choice == "paper":
-			print(" ··· I will be kind to you when we rule the planet, LOSER!···")
-			gameVars.player_lives -= 1
-		
-		else:
-			print("                  ··· YOU WON ···                 ")
-			print(" ··· Despite defeat, the Machines keep rocking! ···")
-			gameVars.computer_lives -= 1
+	rpsCompare.wonchoice()
 
 	# Step 6: life counter goes to 0
 	if gameVars.player_lives == 0:
@@ -80,8 +49,8 @@ while gameVars.player_choice is False:
 		
 	# Step 5: life counter message
 	print("   ")
-	print("Your human lives: ", gameVars.player_lives)
-	print("My machine lives: ", gameVars.computer_lives)
+	print("Your human lives ♥: ", gameVars.player_lives)
+	print("My machine lives ♥: ", gameVars.computer_lives)
 	print("==============================================")
 
 	# map the loop keep running, by setting player_choice back to False
