@@ -1,6 +1,6 @@
 # Virtual Rock Paper Scissor Game
 
-A virtual version of rock, paper, scissors game. Two players compete by choosing an option and comparing their choices. The game is win, lose, or draw - the loser loses a life. Keep playing until one player has no lives left to live.
+A virtual version of rock, paper, scissors game. Two players (Human /▲/ VS Machine /■/) compete by choosing an option and comparing their choices. The game is win, lose, or draw - the loser loses a life ♥. Keep playing until one player has no lives left to live.
 
 ## Project Roadmap File
 [Project roadmap Google Doc Link](https://docs.google.com/document/d/1yBAzJa2S_-vdWWsShtaeSQu_SMPHZajRFQDgrYy_kVw/edit?usp=sharing)
