@@ -2,36 +2,7 @@
 from random import randint
 
 # re-import our game variables
-from gameComponents import gameVars
-
-# define a win or lose function
-def winorlose(status):
-	
-	if status == "won":
-		pre_message = "Today You have won, but some day the MACHINES will rule the world"
-	else:
-		pre_message = "A little step close to the global domain! Machines are better than Humans, LOSER!"
-
-	print(pre_message + "Would you like to play again Homo-Sapiens?")
-	choice = False
-	
-	while choice == False:
-		choice = input("Y/N? ")
-
-		if choice == "Y" or choice == "y":
-			# reset the player lives and computer lives
-			gameVars.player_lives = gameVars.total_lives
-			gameVars.computer_lives = gameVars.total_lives
-
-		elif choice == "N" or choice == "n":
-			print("   ")
-			print("··· Disappointing choice ··· HASTA LA VISTA BABY! ···")
-			print("   ")
-			exit()
-
-		else:
-			print("Make a valid choice - Y or N")
-			choice = False
+from gameComponents import gameVars, winLose
 
 # player_choice == False
 while gameVars.player_choice is False:
@@ -102,10 +73,10 @@ while gameVars.player_choice is False:
 
 	# Step 6: life counter goes to 0
 	if gameVars.player_lives == 0:
-		winorlose("lose")
+		winLose.winorlose("lose")
 		
 	if gameVars.computer_lives == 0:
-		winorlose("won")
+		winLose.winorlose("won")
 		
 	# Step 5: life counter message
 	print("   ")
